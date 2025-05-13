@@ -14,7 +14,7 @@
 
     function enviarLocalizacao() {
       navigator.geolocation.getCurrentPosition((pos) => {
-        fetch('http://https://vercel.com/guilhermes-projects-9f3e10b5/rastreamento-entregas/atualizar-localizacao', {
+        fetch('wss://rastreamento-entregas.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
