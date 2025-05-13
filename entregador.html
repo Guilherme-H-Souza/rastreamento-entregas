@@ -14,7 +14,7 @@
 
     function enviarLocalizacao() {
       navigator.geolocation.getCurrentPosition((pos) => {
-        fetch('http://localhost:3000/atualizar-localizacao', {
+        fetch('http://https://vercel.com/guilhermes-projects-9f3e10b5/rastreamento-entregas/atualizar-localizacao', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
