@@ -25,7 +25,7 @@
       const pedidoId = document.getElementById('pedidoId').value;
       if (!pedidoId) return alert('Digite um ID de pedido.');
 
-      socket = new WebSocket('ws://localhost:3000'); // troque depois pelo link da Render
+      socket = new WebSocket('ws://https://vercel.com/guilhermes-projects-9f3e10b5/rastreamento-entregas'); // troque depois pelo link da Render
       socket.onopen = () => {
         socket.send(JSON.stringify({ tipo: 'inscrever', pedidoId }));
       };
