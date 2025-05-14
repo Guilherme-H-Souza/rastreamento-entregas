@@ -25,7 +25,8 @@
       const pedidoId = document.getElementById('pedidoId').value;
       if (!pedidoId) return alert('Digite um ID de pedido.');
 
-      const socket = new WebSocket("wss://rastreamento-entregas.onrender.com");
+      socket = new WebSocket('wss://rastreamento-entregas.onrender.com'); // ✅ CORRIGIDO
+
       socket.onopen = () => {
         socket.send(JSON.stringify({ tipo: 'inscrever', pedidoId }));
       };
@@ -45,3 +46,4 @@
   </script>
 </body>
 </html>
+
