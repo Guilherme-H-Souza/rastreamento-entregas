@@ -14,11 +14,15 @@
 
     function enviarLocalizacao() {
       navigator.geolocation.getCurrentPosition((pos) => {
-        fetch('https://rastreamento-entregas.onrender.com/atualizar-localizacao', {
+        fetch('https://rastreamento-entregas.onrender.com/atualizar-localizacao', { // ✅ CORRIGIDO
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ pedidoId, lat, lng }),
-});
+          body: JSON.stringify({
+            pedidoId,
+            lat: pos.coords.latitude,
+            lng: pos.coords.longitude,
+          }),
+        }).catch(err => console.error("Erro ao enviar:", err));
       });
     }
 
@@ -27,7 +31,6 @@
       if (!pedidoId) return alert('Digite o ID do pedido');
       setInterval(enviarLocalizacao, 5000);
     }
-    
   </script>
 </body>
 </html>
