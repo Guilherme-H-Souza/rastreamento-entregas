@@ -57,6 +57,11 @@ app.post('/atualizar-localizacao', (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
+
+app.get('/', (req, res) => {
+  res.send('✅ Backend de rastreamento está funcionando!');
+});
+
 server.listen(port, () => {
   console.log(`Servidor rodando na porta ${port}`);
 });
